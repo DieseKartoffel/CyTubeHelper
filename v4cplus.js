@@ -9,7 +9,7 @@
 
 $('#wrap').append('<div id="helper">Help</div>');
 
-var minimized = false;
+var minimized = true;
 var dialog = $("#helper").dialog({
 	width : 400,
 	height : 100,

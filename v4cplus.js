@@ -58,23 +58,15 @@ minimize();
 var target = document.querySelector('#messagebuffer');
 
 var observer = new MutationObserver(function (mutations) {
-	mutations.forEach(function (mutation) {
-		var last = $('#messagebuffer').children().last();
-		var emote = last.find(".channel-emote");
-		if (emote.length == 0) {
-			//no emote sent
-			return;
-		}
-		//new click listener for every emote
-		emote.each(element => {
-			emote.on("click", function () {
-				console.log(emote.attr("title") + " " + emote.attr("src"));
-				var txt = $('#chatline').val;
-				$('#chatline').val($('#chatline').val() + " " + (emote.attr("title")));
-			});
-		});
+	var last = $('#messagebuffer').children().last();
+	//for each emote: onClick: append emote title attribute to chat input field
+	var emote = last.find(".channel-emote").on("click", function () {
+		//console.log($(this).attr("title") + " " + $(this).attr("src"));
+		$('#chatline').val( $('#chatline').val() + " " + ($(this).attr("title")) );		
 	});
+  console.log(emote.length + " emotes handled by v4cHelper")
 });
+
 
 
 // Observe addition of new messages as div children

@@ -8,7 +8,7 @@ about:debugging
 ```
 #### 3. Click "Add temporary plugin" and select manifest.json file
 #### 4. Visit any cytu.be site
-### Install
+### Install (Firefox)
 #### 1. Download "v4cplus-1.0-fx.xpi"
 #### 2. Navigate Mozilla Firefox to: 
 ```

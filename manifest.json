@@ -4,10 +4,16 @@
   "name": "v4cPlus",
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Helps me using Cytube.",
+  
+  "applications": {
+  "gecko": {
+      "id": "v4chelper@jamboozle.tk"
+    }
+  },
 
   "icons": {
-    "48": "icons/border-48.png"
+    "16": "helper.png"
   },
 
   "content_scripts": [

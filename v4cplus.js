@@ -67,8 +67,6 @@ var observer = new MutationObserver(function (mutations) {
   console.log(emote.length + " emotes handled by v4cHelper")
 });
 
-
-
 // Observe addition of new messages as div children
 var config = { childList: true };
 

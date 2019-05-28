@@ -1,4 +1,7 @@
 ## How to run:
-### Download Folder
-### Navigate Mozilla Firefox to: about:debugging
-### Add temporary plugin and select manifest.json
+### 1. Download the folder
+### 2. Navigate Mozilla Firefox to: 
+'''
+about:debugging
+'''
+### 3. Click "Add temporary plugin" and select manifest.json file

@@ -127,6 +127,7 @@ function emoteToDialog(title, src) {
 
 	if(items >= 30){
 		$('#chatEmotes').children().last().remove();;
+		items--;
 	}
 
 	//prepate html to prepend

@@ -1,8 +1,10 @@
-#v4cHelper
-Mozilla Firefox Addon that displays emotes that have recently been sent and can help to apply effects to the chat more easily. It also allows to just click emotes that are in chat to paste them into the text input field.
+# v4cHelper
+
+Mozilla Firefox Addon to enhance [CyTube](https://github.com/calzoneman/sync). It displays emotes that have recently been sent in a small dialog and can help to apply effects to the chat more easily. It also allows to just click emotes that are in chat to paste them into the text input field.
+
+Tested on cytu.be/r/v4c but probably works in any room.
 
 ![alt tag](https://i.imgur.com/AfFS3Th.png "Screenshot v1.1")
-
 
 ## How to run:
 

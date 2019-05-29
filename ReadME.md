@@ -1,6 +1,9 @@
 # v4cHelper
 
-Mozilla Firefox Addon to enhance [CyTube](https://github.com/calzoneman/sync). It displays emotes that have recently been sent in a small dialog and can help to apply effects to the chat more easily. It also allows to just click emotes that are in chat to paste them into the text input field.
+Mozilla Firefox Addon to enhance [CyTube](https://github.com/calzoneman/sync). 
+- Makes emotes in chat clickable (pastes them into text chat on click).
+- Tracks emotes that were sent recently in a small dialog window. These are then also clickable.
+- Can help to apply effects to the chat more easily (Select and apply in dialog window).
 
 Tested on cytu.be/r/v4c but probably works in any room.
 

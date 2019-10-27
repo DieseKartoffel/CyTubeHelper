@@ -1,5 +1,7 @@
 //document.body.style.border = "5px solid red";
 
+$("#windowContent").remove();
+
 
 /*
 *
@@ -57,6 +59,8 @@ var dialog = $("#windowContent").dialog({
 $('.ui-dialog').css({ 'box-sizing': 'content-box' });
 $('.ui-dialog-content').css({ 'box-sizing': 'content-box' });
 
+minimize();
+
 
 //hide window
 function minimize() {
@@ -76,8 +80,6 @@ function unminimize() {
 	}, 200);
 }
 
-minimize();
-
 /*
 *
 *				Make Chat emotes clickable and add them to Dialog:
@@ -90,10 +92,12 @@ var target = document.querySelector('#messagebuffer');
 // new message event handling
 var observer = new MutationObserver(function (mutations) {
 	var last = $('#messagebuffer').children().last();
-	//for each emote: onClick: append emote title attribute to chat input field
-	var emote = last.find(".channel-emote").on("click", function () {
-		$('#chatline').val($('#chatline').val() + " " + ($(this).attr("title")));
-	});
+	//emote onClick: append emote title attribute to chat input field
+	var emote = last.find(".channel-emote").click(
+		function () {
+		    $('#chatline').val($('#chatline').val() + " " + ($(this).attr("title")));
+		}
+	);
 
 	emote.each(function () {
 		console.log($(this).attr("title"), $(this).attr("src"));
@@ -110,7 +114,7 @@ observer.observe(target, config);
 
 
 // Add Emote to Dialog
-var items = 0; //amount of listes emotes
+var items = 0; //amount of listed emotes
 function emoteToDialog(title, src) {
 	if (typeof title == 'undefined' || typeof src == 'undefined') {
 		return;
@@ -121,6 +125,7 @@ function emoteToDialog(title, src) {
 	//if emote is already listed in the UI: remove it
 	var del = $('#' + emoteID).remove();
 
+	//if del does not exist iterate item number
 	if(!del.length > 0){
 		items++;
 	}
@@ -131,20 +136,18 @@ function emoteToDialog(title, src) {
 	}
 
 	//prepate html to prepend
-	var btn = $('<img src="' + src + '" id="' + emoteID + '" width="28" height="28" /></img>');
-	btn.on("click", function () {
-		emoteButtonClick(title);
-	});
+	var btn = $('<div class="emoteicon" id="'+emoteID+'"title=/'+emoteID+' style="float:left;"><img src="' + src + '" id="' + emoteID + "_img'" + '" width="28" height="28" /></img></div>');
+	
+	//Emoteivon onClick: Paste into chat text field
+	btn.click(
+		function () {
+			$('#chatline').val($('#chatline').val() + " " + title);
+		}
+	);
 
 	//add new emote button at top of list in UI
 	btn.prependTo("#chatEmotes");
 }
-
-function emoteButtonClick(title) {
-	$('#chatline').val($('#chatline').val() + " " + title);
-}
-
-
 
 /*
 *
